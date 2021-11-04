@@ -1,12 +1,12 @@
 import React from 'react'
-import Buy from "../pages/Buy";
+import Home from "../pages/Home";
 
 
 class App extends React.Component{
     render() {
         return(
                 <>
-                    <Buy/>
+                    <Home/>
                 </>
 
         )
