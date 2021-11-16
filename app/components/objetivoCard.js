@@ -3,7 +3,7 @@ import local from '../assets/img/local.jpg';
 import fabrica from '../assets/img/fabrica.jpeg';
 import receta from '../assets/img/receta.jpg';
 import vector from '../assets/img/vector.svg';
-import '../assets/objetoCard.css';
+import '../assets/css/objetoCard.css';
 import * as url from "url";
 
 

@@ -1,7 +1,6 @@
 import React from "react";
 
 import Header from "../components/Header";
-
 import ObjetivoCard from "../components/objetivoCard";
 import StripeProduct from "../components/StripeProduct";
 import Maps from '../components/Maps';

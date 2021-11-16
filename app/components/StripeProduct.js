@@ -1,11 +1,12 @@
 import React from 'react';
-import '../assets/product.css';
+import '../assets/css/product.css';
 import chipilin from '../assets/img/chipilin.jpg';
 import mole from '../assets/img/mole.jpg';
 import bola from '../assets/img/bola.jpg';
 import cambray from '../assets/img/cambray.jpg';
 import porconf from '../assets/img/porconf.png';
 import porconfig1 from '../assets/img/porconf1.jpg';
+import {Link} from "react-router-dom";
 
 class StripeProduct extends React.Component{
     constructor(props) {
@@ -18,7 +19,9 @@ class StripeProduct extends React.Component{
                     <div className="product-stripe">
                         <div className="stripe-container">
                             <div className="card bien" >
+                                <Link to="/ProductDetails">
                                 <img src={chipilin} className="card-img-top" alt="es una fabrica de tamales" style={{height: 200}}/>
+                                </Link>
                                 <div className="card-body">
                                     <h5 className="card-title">Chipilin</h5>
                                     <span className="badge bg-info text-dark">$15MX</span>

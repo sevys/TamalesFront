@@ -1,3 +1,4 @@
+
 body{
     margin: 0em;
 }
@@ -11,7 +12,7 @@ h1, h2, h3, h4, h5{
 .cover {
     color: white;
     height: 350px;
-    background-image: url("./img/unotamal.jpg");
+    background-image: url("../img/unotamal.jpg");
     background-size: cover;
     background-position: center;
     background-color: rgba(0, 0, 0, 0.2);

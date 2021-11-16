@@ -1,5 +1,6 @@
 import React from 'react';
-import   '../assets/Header.css';
+import   '../assets/css/Header.css';
+import {Link} from 'react-router-dom';
 
 
 
@@ -23,10 +24,15 @@ class Header extends  React.Component{
                                         <a className="nav-link" href="#">Productos</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link " href="#">Ubicación</a>
+                                        <Link to="/Mapa">
+                                            <a className="nav-link " href="#">Ubicación</a>
+                                        </Link>
+
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link " href="#">Pedidos</a>
+                                        <Link to="/Pedidos">
+                                            <a className="nav-link " href="#">Pedidos</a>
+                                        </Link>
                                     </li>
 
                                 </ul>
