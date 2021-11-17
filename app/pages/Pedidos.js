@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import Footer from "../components/Footer";
 
 class Pedidos extends React.Component{
     constructor(props) {
@@ -31,6 +32,7 @@ class Pedidos extends React.Component{
                     </nav>
                 </div>
                 <br/>
+                <br/>
                 <div className=" bg-light">
                     <div className="container ">
                         <div className="row">
@@ -50,6 +52,40 @@ class Pedidos extends React.Component{
                 </div>
                 <br/>
                 <br/>
+                <div className="container">
+                    <table className="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Total a Pagar</th>
+                            <th scope="col">Estado</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">Tamal1</th>
+                            <td>2</td>
+                            <td>120</td>
+                            <td>pagado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">tamal2</th>
+                            <td>3</td>
+                            <td>23</td>
+                            <td>pagado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">tamal3</th>
+                            <td>9</td>
+                            <td>69</td>
+                            <td>por pagar</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <Footer/>
 
             </div>
         )
