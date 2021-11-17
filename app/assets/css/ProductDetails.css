@@ -31,3 +31,9 @@
     overflow: hidden;
 
 }
+
+.label_cantidad {
+    border: 3px solid;
+    background: black;
+    color: white;
+}

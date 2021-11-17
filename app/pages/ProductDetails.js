@@ -77,7 +77,7 @@ class ProductDetails extends React.Component{
                                 <p>$15MX</p>
                                 <br/>
                                 <div className="btn-group">
-                                    <button type="button" className="btn btn-outline-dark ">Cantidad</button>
+                                    <label className="label_cantidad" >Cantidad</label>
                                     <input type="number"/>
                                 </div>
                                 <br/>

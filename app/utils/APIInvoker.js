@@ -1,5 +1,5 @@
 const configuration = require('../../configServer')
-const debug = configuration.debugMode
+const debug = configuration.debugmode
 
 class APIInvoker {
 
@@ -12,7 +12,7 @@ class APIInvoker {
 
     invokeGET(url, okCallback, failCallback){
         let params = {
-            method: 'GET',
+            method: 'POST',
             headers: this.getAPIHeader()
         }
         this.invoke(url,okCallback,failCallback,params)
