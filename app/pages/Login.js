@@ -1,7 +1,7 @@
 import React from 'react';
 import update from 'immutability-helper';
 import '../assets/css/Login.css';
- import APIInvoker from "../utils/APIInvoker";
+import APIInvoker from "../utils/APIInvoker";
 import vector from "../assets/img/vector.svg";
 
 class Login extends React.Component{
@@ -49,6 +49,7 @@ class Login extends React.Component{
                                            value={this.state.password}
                                            onChange={this.changeField.bind(this)} />
                                 </div>
+                                <div className='label-error' ref={self => this.message =self}> </div>
                                 <button className=" button_login btn btn-primary mt-5" type="submit" onClick={this.logIn.bind(this)}>Iniciar sesión</button>
                             </div>
                         </div>
@@ -67,8 +68,11 @@ class Login extends React.Component{
                 </div>
 
             </div>
+
         </section>
         )
+
+
     }
 
     logIn(e){
@@ -77,20 +81,25 @@ class Login extends React.Component{
 
         APIInvoker.invokeGET(`/users/userValidate/${email}/${password}`,
             data => {
-                alert(data.message)
-                if (data.status){
-                    alert("se a iniciado sesion")
-                }else {
-                    alert("no se que paso")
-                }
+                this.goTo()
+
             },
             error =>{
-                alert("no se pudo iniciar sesion")
-                alert(error)
+                this.message.innerHTML = "Contraseña o Usuario Incorrecto"
+                e.preventDefault()
+                document.getElementById('email').value = '';
+                document.getElementById('password').value = '';
+                this.state.email = null
+                this.state.password = null
             }
         )
 
     }
+
+    goTo(){
+        return this.props.history.push('/Pedidos');
+    };
+
 
 }
 export default Login;
