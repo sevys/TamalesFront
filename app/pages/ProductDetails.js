@@ -83,7 +83,7 @@ class ProductDetails extends React.Component{
                                 <br/>
                                 <br/>
                                 <button type="button" className="btn btn-dark" id="buttons-align" >Añadir al carrito</button>
-                                <Link className=" text-white text-center " to="#" >
+                                <Link className=" text-white text-center " to="/Comprar" >
                                     <button type="button" className="btn btn-dark"  id="buttons-align">Comprar</button>
                                 </Link>
                                 <br/>

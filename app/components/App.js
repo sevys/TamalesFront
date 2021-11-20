@@ -4,6 +4,7 @@ import Login from "../pages/Login";
 import ProductDetails from "../pages/ProductDetails";
 import Pedidos from '../pages/Pedidos';
 import Maps from '../components/Maps';
+import Comprar from '../components/Comprar';
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 
 
@@ -17,6 +18,7 @@ class App extends React.Component{
                         <Route exact path="/ProductDetails" component={ProductDetails}/>
                         <Route exact path="/Pedidos" component={Pedidos}/>
                         <Route exact path="/Mapa" component={Maps}/>
+                        <Route extact path="/Comprar" component={Comprar}/>
                     </Switch>
                 </BrowserRouter>
 
