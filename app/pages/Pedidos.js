@@ -104,4 +104,5 @@ class Pedidos extends React.Component{
     }
 
 }
+
 export default Pedidos;
