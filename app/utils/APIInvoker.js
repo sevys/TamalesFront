@@ -12,7 +12,7 @@ class APIInvoker {
 
     invokeGET(url, okCallback, failCallback){
         let params = {
-            method: 'POST',
+            method: 'GET',
             headers: this.getAPIHeader()
         }
         this.invoke(url,okCallback,failCallback,params)
@@ -25,6 +25,15 @@ class APIInvoker {
             body: JSON.stringify(body)
         }
         this.invoke(url,okCallback,failCallback,params)
+    }
+
+    usersInvokePOST(url,okCallbak, failCallback){
+        let params = {
+            method: 'POST',
+            headers: this.getAPIHeader(),
+        }
+
+        this.invoke(url,okCallbak,failCallback,params)
     }
 
     invokePOST(url, body, okCallbak, failCallback){

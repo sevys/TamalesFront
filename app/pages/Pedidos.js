@@ -1,12 +1,30 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import Footer from "../components/Footer";
+import bd from "../utils/APIInvoker";
 
 class Pedidos extends React.Component{
     constructor(props) {
         super(props);
 
+        this.state = {
+            PedidosList: []
+
+        }
+
+        //Extraer el catálogo de roles del backend
+        bd.invokeGET('/pedidos/consultar',data => {  //Entrará acá cuando status = true
+            this.setState({
+                PedidosList : data.data
+
+            })
+            console.log(data)
+        }, error => { //Entrará acá cuando status = false
+            console.log(data)
+        })
     }
+
+
     render(){
         return(
             <div>
@@ -53,7 +71,7 @@ class Pedidos extends React.Component{
                 <br/>
                 <br/>
                 <div className="container">
-                    <table className="table">
+                    <table className="table" id='tabla'>
                         <thead>
                         <tr>
                             <th scope="col">Nombre</th>
@@ -66,43 +84,34 @@ class Pedidos extends React.Component{
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <th scope="row">Tamal1</th>
-                            <td>2</td>
-                            <td>120</td>
-                            <td>pagado</td>
-                            <td>pagado</td>
-                            <td>pagado</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">tamal2</th>
-                            <td>3</td>
-                            <td>23</td>
-                            <td>pagado</td>
-                            <td>pagado</td>
-                            <td>pagado</td>
+                        {this.state.PedidosList.map((data) =>(
+                            <tr key={data}>
+                                <td>{data.Nombre}</td>
+                                <td>{data.Apellidos}</td>
+                                <td>{data.Telefono}</td>
+                                <td>{data.Producto}</td>
+                                <td>{data.Cantidad}</td>
+                                <td>{data.totalPagar}</td>
+                            </tr>
 
-
-                        </tr>
-                        <tr>
-                            <th scope="row">tamal3</th>
-                            <td>9</td>
-                            <td>69</td>
-                            <td>por pagar</td>
-                            <td>pagado</td>
-                            <td>pagado</td>
-
-                        </tr>
+                        ))}
                         </tbody>
                     </table>
                 </div>
-
                 <Footer/>
 
             </div>
         )
     }
 
+
 }
+
+
+
+
+
+
+
 
 export default Pedidos;
