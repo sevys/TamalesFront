@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import Footer from "../components/Footer";
 import '../assets/css/ProductDetails.css';
+import chipilin from "../assets/img/chipilin.jpg";
 
 class ProductDetails extends React.Component{
     constructor(props) {
@@ -70,7 +71,7 @@ class ProductDetails extends React.Component{
                                 </div>
                             </div>
                             <div className="col-lg-5" >
-                                <p>no se como poner la foto</p>
+                                <img src={chipilin} className="card-img-top" alt="es una fabrica de tamales" style={{height: 300}}/>
                             </div>
                             <div className="col-lg-4">
                                 <h6 className="fw-bold text-black">Nombre del Producto</h6>
