@@ -79,7 +79,7 @@ class Login extends React.Component{
         let password = this.state.password
         let email = this.state.email
 
-        APIInvoker.invokeGET(`/users/userValidate/${email}/${password}`,
+        APIInvoker.usersInvokePOST(`/users/userValidate/${email}/${password}`,
             data => {
                 this.goTo()
 
