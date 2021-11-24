@@ -6,7 +6,7 @@ import bola from '../assets/img/bola.jpg';
 import cambray from '../assets/img/cambray.jpg';
 import porconf from '../assets/img/porconf.png';
 import porconfig1 from '../assets/img/porconf1.jpg';
-import {Link} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 
 class StripeProduct extends React.Component{
     constructor(props) {
@@ -19,7 +19,11 @@ class StripeProduct extends React.Component{
                     <div className="product-stripe">
                         <div className="stripe-container">
                             <div className="card bien" >
-                                <Link to="/ProductDetails">
+                                <Link to={{
+                                  pathname:"/ProductDetails",
+                                  state:{img: chipilin,
+                                  nombrec:'Chipilin'}
+                                }}>
                                 <img src={chipilin} className="card-img-top" alt="es una fabrica de tamales" style={{height: 200}}/>
                                 </Link>
                                 <div className="card-body">
@@ -28,24 +32,43 @@ class StripeProduct extends React.Component{
                                 </div>
                             </div>
                             <div className="card" >
+                                <Link to={{
+                                    pathname:'/ProductDetails',
+                                    state:{img:bola,
+                                    nombrec:'Bola'}
+                                }}>
                                 <img src={bola} className="card-img-top" alt="es una fabrica de tamales" style={{height: 200}}/>
-
+                                </Link>
                                 <div className="card-body">
                                     <h5 className="card-title">Bola</h5>
                                     <span className="badge bg-info text-dark">$15MX</span>
                                 </div>
                             </div>
                             <div className="card" >
-                                <img src={mole} className="card-img-top" alt="es una fabrica de tamales" style={{height: 200}}/>
-
-                                <div className="card-body">
-                                    <h5 className="card-title">Mole</h5>
-                                    <span className="badge bg-info text-dark">$15MX</span>
-                                </div>
+                                <Link to={{
+                                    pathname:'/ProductDetails',
+                                    state:{
+                                        img:mole,
+                                        nombrec:'Mole'
+                                    }
+                                }}>
+                                    <img src={mole} className="card-img-top" alt="es una fabrica de tamales" style={{height: 200}}/>
+                                </Link>
+                                    <div className="card-body">
+                                        <h5 className="card-title">Mole</h5>
+                                        <span className="badge bg-info text-dark">$15MX</span>
+                                    </div>
                             </div>
                             <div className="card" >
+                                <Link to={{
+                                    pathname:'/ProductDetails',
+                                    state:{
+                                        img:cambray,
+                                        nombrec:'Cambray'
+                                    }
+                                }}>
                                 <img src={cambray} className="card-img-top" alt="es una fabrica de tamales" style={{height: 200}}/>
-
+                                </Link>
                                 <div className="card-body">
                                     <h5 className="card-title">Cambray</h5>
                                     <span className="badge bg-info text-dark">$15MX</span>

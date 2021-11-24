@@ -7,9 +7,11 @@ import '../assets/css/Compra.css'
 class Comprar extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-
+        this.state={
+            nombrePro:this.props.location.state.nombreProducto,
+            cantidad:this.props.location.state.canti
         }
+
     }
 
 
@@ -38,12 +40,12 @@ class Comprar extends React.Component {
                         </div>
 
                         <div className="col-lg-4">
-                            <h6 className="fw-bold text-black">Nombre del Producto</h6>
+                            <h6 className="fw-bold text-black">{this.state.nombrePro}</h6>
                             <p>$15MX</p>
                             <br/>
                             <div className="btn-group">
                                 <label className="label_cantidad" >Cantidad  </label>
-                                <label>2</label>
+                                <label>{this.state.cantidad}</label>
                             </div>
                             <br/>
                             <div className="btn-group">
@@ -55,7 +57,7 @@ class Comprar extends React.Component {
                             <Link to="/Modal">
                                 <button type="button" className="btn btn-dark" id="buttons-align" >TerminarCompra</button>
                             </Link>
-                            <Link className=" text-white text-center " to="/ProductDetails" >
+                            <Link className=" text-white text-center " to="/" >
                                 <button type="button" className="btn btn-dark"  id="buttons-align">Cancelar</button>
                             </Link>
                             <br/>

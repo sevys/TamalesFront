@@ -2,11 +2,20 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import Footer from "../components/Footer";
 import '../assets/css/ProductDetails.css';
-import chipilin from "../assets/img/chipilin.jpg";
 
 class ProductDetails extends React.Component{
     constructor(props) {
         super(props);
+        this.state={
+            como:this.props.location.state.img,
+            nombreProduct:this.props.location.state.nombrec,
+            cantidad:''
+        }
+    }
+    changeField=(e)=>{
+        this.setState({
+            cantidad: e.target.value
+        })
     }
     render(){
         return(
@@ -71,20 +80,30 @@ class ProductDetails extends React.Component{
                                 </div>
                             </div>
                             <div className="col-lg-5" >
-                                <img src={chipilin} className="card-img-top" alt="es una fabrica de tamales" style={{height: 300}}/>
+                                <img src={this.state.como} className="card-img-top" alt="es una imagen de un tamal" style={{height: 300}}/>
                             </div>
                             <div className="col-lg-4">
-                                <h6 className="fw-bold text-black">Nombre del Producto</h6>
+                                <h6 className="fw-bold text-black">{this.state.nombreProduct}</h6>
                                 <p>$15MX</p>
                                 <br/>
                                 <div className="btn-group">
                                     <label className="label_cantidad" >Cantidad</label>
-                                    <input type="number"/>
+                                    <input className="input" type="number"
+                                           name="number"
+                                           value={this.state.cantidad}
+                                           onChange={this.changeField.bind(this)}
+                                    />
                                 </div>
                                 <br/>
                                 <br/>
                                 <button type="button" className="btn btn-dark" id="buttons-align" >Añadir al carrito</button>
-                                <Link className=" text-white text-center " to="/Comprar" >
+                                <Link className=" text-white text-center " to={{
+                                    pathname:'/Comprar',
+                                    state:{
+                                        nombreProducto:this.state.nombreProduct,
+                                        canti:this.state.cantidad
+                                    }
+                                }} >
                                     <button type="button" className="btn btn-dark"  id="buttons-align">Comprar</button>
                                 </Link>
                                 <br/>

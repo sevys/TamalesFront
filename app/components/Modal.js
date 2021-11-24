@@ -19,7 +19,7 @@ class Modal extends React.Component{
         this.goTo();
     }
     goTo(){
-        return this.props.history.push('/ProductDetails');
+        return this.props.history.push('/');
     }
 
     render(){
