@@ -93,6 +93,7 @@ class ProductDetails extends React.Component{
                                            value={this.state.cantidad}
                                            onChange={this.changeField.bind(this)}
                                     />
+                                    <label ref={self=> this.cantidad = self}></label>
                                 </div>
                                 <br/>
                                 <br/>
@@ -103,8 +104,8 @@ class ProductDetails extends React.Component{
                                         nombreProducto:this.state.nombreProduct,
                                         canti:this.state.cantidad
                                     }
-                                }} >
-                                    <button type="button" className="btn btn-dark"  id="buttons-align">Comprar</button>
+                                    }} >
+                                    <button type="button" className="btn btn-dark"  id="buttons-align" >Comprar</button>
                                 </Link>
                                 <br/>
                                 <br/>
@@ -120,6 +121,15 @@ class ProductDetails extends React.Component{
             </div>
         )
     }
+
+    // comprar(){
+    //
+    //     if (this.state.cantidad === 0){
+    //         this.nombre.innerHTML = 'Agregue un cantidad Valida'
+    //     }else {
+    //
+    //     }
+    // }
 
 }
 export default ProductDetails;
